@@ -1,9 +1,15 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport"/>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Scripts originais -->
     <script src="js/angular-bootstrap/jquery.js"></script>
-
     <script src="js/angular-bootstrap/angular.min.js"></script>
     <script src="js/angular-bootstrap/angular-local-storage.js"></script>
     <script src="js/angular-bootstrap/angular-translate.min.js"></script>
@@ -20,9 +26,10 @@
     <script src="js/user-custom/login-controller.js"></script>
     <script src="js/user-custom/portal-param.js"></script>
     <script src="js/user-custom/style.js"></script>
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/user-custom/success-controller.js"></script>
+
+    <!-- Mantendo os estilos originais -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/portal-layout.css">
     <link rel="stylesheet" type="text/css" href="css/additional.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
@@ -30,101 +37,325 @@
     <link rel="stylesheet" type="text/css" href="css/declaration.css">
     <link rel="stylesheet" href="css/flag-icon.min.css">
     <link rel="stylesheet" href="css/style.css"> 
-</head>
-<script>
-    //取值的方法
-    function getQueryString(name) {
-        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-        var r = window.location.search.substr(1).match(reg);
-        if (r != null) return unescape(r[2]);
-        return null;
-    }
-    //此处js是控制成功页面是否继续跳转的，如果在ov页面用户选择跳转到初始页面或这指定页面，那么此处代码会进行处理
-    function fixandinit(){
-        var url = location.href;
-        var fixurl = getQueryString("fixandinit");
-        if((fixurl != null && fixurl !== '' && fixurl !== 'null') && (typeof(fixurl) != "undefined") && (fixurl != 'http://captive.apple.com/hotspot-detect.html')){
-            $('.btn').attr('disabled', true);
-            window.setTimeout("window.location=\""+fixurl+"\"",5000);
+    
+    <style>
+        /* Estilos personalizados para a nova tela de sucesso */
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
         }
-    }
-</script>
- <!--
- 
- <script>
-  setTimeout(function () {
-    window.location.href = "https://www.gov.br/defesa/pt-br";
-  }, 4000); // 3000ms = 3 segundos
-</script>
-
--->
+        
+        .header-area {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+            margin-bottom: 30px;
+        }
+        
+        .logo-container {
+            text-align: center;
+        }
+        
+        .logo-container img {
+            max-height: 70px;
+            width: auto;
+        }
+        
+        .success-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 0;
+            overflow: hidden;
+            margin-bottom: 40px;
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .success-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .success-header {
+            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .success-icon-wrapper {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .success-icon {
+            color: #43cea2;
+            font-size: 50px;
+        }
+        
+        .success-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .success-body {
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .success-message {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        
+        .device-info {
+            background-color: rgba(67, 206, 162, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .device-info-title {
+            font-weight: 600;
+            color: #185a9d;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .success-link {
+            color: #185a9d;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background-color: rgba(24, 90, 157, 0.1);
+            margin-top: 5px;
+            cursor: pointer;
+        }
+        
+        .success-link:hover {
+            color: #fff;
+            background-color: #185a9d;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(24, 90, 157, 0.3);
+        }
+        
+        .btn-logout {
+            background: linear-gradient(135deg, #ff9966 0%, #ff5e62 100%);
+            border: none;
+            height: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 25px;
+            transition: all 0.3s;
+            color: white;
+            padding: 0 30px;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(255, 94, 98, 0.3);
+        }
+        
+        .btn-logout:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 94, 98, 0.4);
+        }
+        
+        .btn-logout:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        /* Decoração de fundo */
+        .decoration {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.5;
+        }
+        
+        .decoration-1 {
+            top: 10%;
+            left: 5%;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(67, 206, 162, 0.5) 0%, rgba(24, 90, 157, 0) 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .decoration-2 {
+            bottom: 10%;
+            right: 5%;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(67, 206, 162, 0.5) 0%, rgba(24, 90, 157, 0) 70%);
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Animação de sucesso */
+        @keyframes checkmark {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .animate-checkmark {
+            animation: checkmark 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        }
+        
+        /* Estilos para dispositivos móveis */
+        @media (max-width: 768px) {
+            .success-card {
+                margin: 0 15px 30px;
+            }
+            
+            .success-header {
+                padding: 25px 15px;
+            }
+            
+            .success-icon-wrapper {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 15px;
+            }
+            
+            .success-icon {
+                font-size: 40px;
+            }
+            
+            .success-title {
+                font-size: 24px;
+            }
+            
+            .success-body {
+                padding: 25px 20px;
+            }
+            
+            .success-message {
+                font-size: 16px;
+            }
+            
+            .btn-logout {
+                height: 45px;
+                font-size: 15px;
+            }
+        }
+    </style>
+    
+    <script>
+        //取值的方法
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+        //此处js是控制成功页面是否继续跳转的，如果在ov页面用户选择跳转到初始页面或这指定页面，那么此处代码会进行处理
+        function fixandinit(){
+            var url = location.href;
+            var fixurl = getQueryString("fixandinit");
+            if((fixurl != null && fixurl !== '' && fixurl !== 'null') && (typeof(fixurl) != "undefined") && (fixurl != 'http://captive.apple.com/hotspot-detect.html')){
+                $('.btn').attr('disabled', true);
+                window.setTimeout("window.location=\""+fixurl+"\"",5000);
+            }
+        }
+    </script>
+    <!--
+     
+     <script>
+      setTimeout(function () {
+        window.location.href = "https://www.gov.br/defesa/pt-br";
+      }, 4000); // 3000ms = 3 segundos
+    </script>
+    
+    -->
+</head>
 <body ng-app="main" ng-controller="loginController as vm" onload="fixandinit()">
-    <div align="center"  class="container" ><img   src="img/def.png" alt="Imagem responsiva" /></div>
-<div class="container-fluid"
-     id="success_layout_id"><!-- wma-map-content portal_layout_container -->
-    <div class="row header-wrapper">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 header-content" ng-style="successLogoBg" hidden="hidden">
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-8">
-                <img
-                    id="success_logo" 
-                    ng-src="{{vm.success_logo}}"
-                    style="cursor: pointer"
-                    ng-click="vm.action.successLinkedUrl()">
-            </div>
-            <div class="flag-wrapper">
-                <div class="dropdown language-dropdown pull-right">
-                    <a data-toggle="dropdown" class="dropdown-toggle language-icon pointer"><span ng-class="vm.languageIcon"></span></a>
-                    <ul class="dropdown-menu">
-                        <li class="btn btn-block" ng-click="vm.action.switching('us')"><span  class="flag-icon flag-icon-world" style="line-height:1.3em;"></span> English</li>
-                        <li class="btn btn-block" ng-click="vm.action.switching('cn')"><span  class="flag-icon flag-icon-cn" ></span> 中文</li>
-                        <li class="btn btn-block" ng-click="vm.action.switching('de')"><span  class="flag-icon flag-icon-de" ></span> Deutsch</li>
-                        <li class="btn btn-block" ng-click="vm.action.switching('fi')"><span  class="flag-icon flag-icon-fi" ></span> Suomi</li>
-                        <li class="btn btn-block" ng-click="vm.action.switching('fr')"><span  class="flag-icon flag-icon-fr" ></span> Français</li>
-                        <li class="btn btn-block" ng-click="vm.action.switching('nl')"><span  class="flag-icon flag-icon-nl" ></span> Nederlands</li>
-                        <li class="btn btn-block" ng-click="vm.action.switching('no')"><span  class="flag-icon flag-icon-no" ></span> Norska</li>
-                        <li class="btn btn-block" ng-click="vm.action.switching('es')"><span  class="flag-icon flag-icon-es" ></span> Español</li>
-                        <li class="btn btn-block" ng-click="vm.action.switching('kr')"><span  class="flag-icon flag-icon-kr" ></span> 한국어</li>
-                        <li class="btn btn-block" ng-click="vm.action.switching('pl')"><span  class="flag-icon flag-icon-pl" ></span> Polski</li>
-                        <li class="btn btn-block" ng-click="vm.action.switching('br')"><span  class="flag-icon flag-icon-br" ></span> Português</li>
-                        <li class="btn btn-block" ng-click="vm.action.switching('it')"><span  class="flag-icon flag-icon-it" ></span> Italiano</li>
-                        <li class="btn btn-block" ng-click="vm.action.switching('se')"><span  class="flag-icon flag-icon-se" ></span> Svenska</li>
-                        <li class="btn btn-block" ng-click="vm.action.switching('tr')"><span  class="flag-icon flag-icon-tr" ></span> Türkçe</li>
-                        <li class="btn btn-block" ng-click="vm.action.switching('ro')"><span  class="flag-icon flag-icon-ro" ></span> România</li>
-                        <li class="btn btn-block" ng-click="vm.action.switching('lv')"><span  class="flag-icon flag-icon-lv" ></span> Latviešu</li>
-                        <li class="btn btn-block" ng-click="vm.action.switching('lt')"><span  class="flag-icon flag-icon-lt" ></span> Lietuviškai</li>
-                        <li class="btn btn-block" ng-click="vm.action.switching('gr')"><span  class="flag-icon flag-icon-gr" ></span> Ελληνικά</li>
-                    </ul>
+    <!-- Elementos decorativos de fundo -->
+    <div class="decoration decoration-1"></div>
+    <div class="decoration decoration-2"></div>
+    
+    <!-- Cabeçalho com Logo -->
+    <div class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 logo-container">
+                    <img src="img/def.png" alt="Logo" class="img-fluid" />
                 </div>
             </div>
         </div>
-        
     </div>
-    <div class="row"><!-- col-md-12 no-padding-left-right -->
-        <div class="col-lg-12 col-md-12">
-            <div id="success_bg" class="success_portal_layout_function_bg" ng-style="successBgStyle">
-                <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-6  col-sm-offset-3 col-xs-10 col-xs-offset-1 success-container-body"
-                        id="chohei"
-                        ng-style="successBgColorStyle">
-                    <div class="form-group" style="text-align: center;font-size: 20px;">
-                        {{"login.message.loginSuccess"|translate}}
-                        <br/>
-                        {{"login.message.connectStaffMember"|translate}}
-                        <br>
-                        <div ng-if="vm.portalServiceUrl !== null&& vm.portalServiceUrl !== ''" style="word-wrap:break-word;word-break:break-all;">
-                            {{"login.message.rememberDeviceMsg"|translate}}
-                            <a id="sampleOne-add"
-                                    ng-click="vm.action.goServicePortalPage()">{{"login.message.addRememberDevice"|translate}}
+    
+    <!-- Conteúdo Principal -->
+    <div class="container" id="success_layout_id">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <!-- Card de Sucesso -->
+                <div class="card success-card" ng-style="successBgColorStyle">
+                    <!-- Cabeçalho do Card -->
+                    <div class="success-header">
+                        <div class="success-icon-wrapper">
+                            <i class="bi bi-check-lg success-icon animate-checkmark"></i>
+                        </div>
+                        <h1 class="success-title">{{"login.message.loginSuccess"|translate}}</h1>
+                    </div>
+                    
+                    <!-- Corpo do Card -->
+                    <div class="success-body">
+                        <p class="success-message">
+                            {{"login.message.connectStaffMember"|translate}}
+                        </p>
+                        
+                        <!-- Informações do Dispositivo -->
+                        <div class="device-info" ng-if="vm.portalServiceUrl !== null && vm.portalServiceUrl !== ''">
+                            <div class="device-info-title">
+                                {{"login.message.rememberDeviceMsg"|translate}}
+                            </div>
+                            <a id="sampleOne-add" class="success-link"
+                                ng-click="vm.action.goServicePortalPage()">
+                                <i class="bi bi-plus-circle me-2"></i>
+                                {{"login.message.addRememberDevice"|translate}}
                             </a>
                         </div>
-                    </div>
-                    <div class="form-group" style="text-align: center;font-size: 20px;" hidden="hidden">
-                        <a class="btn btn-primary" ng-click="vm.action.logout()" ng-disabled="vm.block"><i
-                                ng-if="vm.block" class='fa fa-spinner fa-spin '></i>{{'login.logoutButton'| translate}}</a>
+                        
+                        <!-- Botão de Logout (oculto) -->
+                        <div hidden="hidden">
+                            <button class="btn btn-logout" ng-click="vm.action.logout()" ng-disabled="vm.block">
+                                <i ng-if="vm.block" class='fa fa-spinner fa-spin me-2'></i>
+                                {{'login.logoutButton'| translate}}
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
