@@ -1,0 +1,72 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+	<script src="js/angular-bootstrap/jquery.js"></script>
+	<script src="js/angular-bootstrap/angular.min.js"></script>
+	<script src="js/angular-bootstrap/angular-local-storage.js"></script>
+	<script src="js/angular-bootstrap/angular-translate.min.js"></script>
+	<script src="js/angular-bootstrap/angular-translate-loader-static-files.min.js"></script>
+	<script src="js/angular-bootstrap/underscore.js"></script>
+	<script src="js/angular-bootstrap/bootstrap.min.js"></script>
+	<script src="js/angular-bootstrap/ui-bootstrap.min.js"></script>
+	<script src="js/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+	<script src="js/user-custom/main.js"></script>
+	<script src="js/user-custom/action-service.js"></script>
+	<script src="js/user-custom/main-constant.js"></script>
+	<script src="js/user-custom/service.js"></script>
+	<script src="js/user-custom/portal-param.js"></script>
+	<script src="js/user-custom/style.js"></script>
+	<script src="js/user-custom/md5.js"></script>
+	<script src="js/user-custom/weixin-login-controller.js"></script>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/portal-layout.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" href="css/flag-icon.min.css">
+    <link rel="stylesheet" href="css/additional.css">
+</head>
+<body ng-app="main" ng-controller="weixinLoginController as vm">
+	<div class="row">
+        <div class="col-md-12 social-header-wrapper" ng-style="logoBg">
+            <img id="welcome_logo" ng-src="{{vm.welcome_logo}}">
+        </div>
+	</div>
+	<div class="row">
+		<div class="portal_layout_function">
+			<div id="welcome_bg" class="facebook_google_function_bg" ng-style="welcomeBgStyle">
+				<div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-6  col-sm-offset-3 col-xs-10 col-xs-offset-1  welcome-container-body"
+					 id="chohei"
+                     ng-style="welcomeBgColorStyle">
+					<div class="row">
+						<div class="col-md-12">
+							<form class="text-center" role="form">
+								<div class="form-group" >
+									{{"login.message.loadingMsg" | translate}}
+									<a id="openSafarisss" href="{{vm.wechaturl}}" ></a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	var loadIframe = null;
+	var noResponse = null;
+	var callUpTimestamp = 0;
+	function createIframe(){
+		var iframe = document.createElement("iframe");
+		iframe.style.cssText = "display:none;width:0px;height:0px;";
+		document.body.appendChild(iframe);
+		loadIframe = iframe;
+	}
+	//注册回调函数
+	function jsonpCallback(result){
+		callWeChat(result);
+	}
+</script>
+</html>

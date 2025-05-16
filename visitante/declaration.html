@@ -1,0 +1,113 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport"/>
+    <script src="js/angular-bootstrap/jquery.js"></script>
+
+    <script src="js/angular-bootstrap/angular.min.js"></script>
+    <script src="js/angular-bootstrap/angular-local-storage.js"></script>
+    <script src="js/angular-bootstrap/angular-translate.min.js"></script>
+    <script src="js/angular-bootstrap/angular-translate-loader-static-files.min.js"></script>
+    <script src="js/angular-bootstrap/underscore.js"></script>
+    <script src="js/angular-bootstrap/bootstrap.min.js"></script>
+    <script src="js/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="js/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <!--User define-->
+    <script src="js/user-custom/main.js"></script>
+    <script src="js/user-custom/action-service.js"></script>
+    <script src="js/user-custom/main-constant.js"></script>
+    <script src="js/user-custom/service.js"></script>
+    <script src="js/user-custom/declaration-controller.js"></script>
+    <script src="js/user-custom/portal-param.js"></script>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/portal-layout.css">
+    <link rel="stylesheet" type="text/css" href="css/additional.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/declaration.css">
+    <link rel="stylesheet" href="css/flag-icon.min.css">
+
+</head>
+<body ng-app="main" ng-controller="declarationController">
+<div class="container-fluid"  ng-cloak>
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div class="col-md-3 declaration_left"></div>
+            <div class="col-md-6 col-xs-12 declaration_right">
+                <form role="form" id="signin-form">
+                    <div class="row declaration_right_padding">
+                        <div class="col-xs-12 col-md-12 col-lg-12 declaration_right_terms_parent">
+                            <h4 class="declaration_right_terms"><span
+                                    class="glyphicon glyphicon-exclamation-sign"></span>{{'login.termsOfUse'|translate}}</h4>
+<p>
+
+
+<div style="padding-left: 2px; padding-right:2px;"><center><h4>Bem-vindo a Rede sem Fio do Ministério da Defesa</h4></br>
+
+Leia atentamente os termos de uso abaixo e, caso não concorde com o estabelecido, não prossiga com a conexão.<br></br>
+</center></br>
+ <div class="logo">
+        <img src="img/def.png" alt="Ministério da Defesa">
+    </div>
+<center></br>
+<span style="color:red"><p>TERMOS DE USO PARA ACESSO A REDE SEM FIO DO MINISTÉRIO DA DEFESA</p></br>
+</span></center></br>
+<p style="text-align:justify; padding-left: 2px; padding-right:2px;"></br>
+<b>1.</b> O serviço de acesso à internet na rede WIFI_DEFESA é uma concessão, devendo a sua utilização ser efetuada de modo responsável </br>
+e seguida de boas práticas, privilegiando as atividades ligadas ao negócio do Ministério da Defesa e em seu estrito interesse;</br>
+<b>2.</b> <b>Servidor</b>, para acesso a esta rede o usuário deverá utilizar as mesmas credenciais de acesso à rede administrativa do MD.</br>
+<b>3.</b> <b>Visitante</b>, para acesso a esta rede o usuário deverá digitar todas as informações pessoais solicitadas neste portal e em seguida </br>
+procurar o responsável para validação dos dados e liberação do acesso.</br>
+<b>4.</b> Caberá aos usuários a realização das configurações necessárias ao acesso de seus equipamentos particulares à rede WIFI_DEFESA do Ministério da Defesa.</br>
+<b>5.</b> Para maior controle, disponibilidade, desempenho e segurança do serviço de internet na rede WIFI_DEFESA, poderão ser aplicadas restrições de acesso</br>
+a sites, categorias, arquivos e restrições de tráfego a determinados serviços.<br>
+<b>6.</b> Todo acesso na rede WIFI_DEFESA será monitorado e os registros de autenticação armazenados para possíveis consultas em processo de auditoria;</br>
+<b>7.</b> Não é permitido na rede WIFI_DEFESA:</br>
+</p><ul>
+<li>Para <b>Servidores</b>, divulgar sua conta de usuário e sua senha de acesso para qualquer pessoa. Estas informações são de caráter pessoal e intransferível; </li>
+<li>Utilizar o serviço para transmitir/divulgar material ilícito, proibido ou difamatório que viole a privacidade de terceiros, ou que seja abusivo, ameaçador, discriminatório, injurioso ou calunioso;</li>
+<li>Utilizar o serviço para transmitir/divulgar material que incentive a violência ou a pirataria;</li>
+<li>Mostrar, armazenar ou transmitir texto, imagens ou sons que possam ser considerados ofensivos ou abusivos;</li>
+<li>Acessar conteúdo pornográfico e jogos on-line;</li>
+<li>Utilizar o serviço para intimidar, assediar ou difamar qualquer pessoa;</li>
+<li>Utilizar o acesso à Internet para instigar, ameaçar ou ofender, abalar a imagem, invadir a privacidade ou prejudicar outros membros/usuários da Internet;</li>
+<li>Efetuar download de arquivos executáveis ou maliciosos;</li>
+<li>Transmitir e/ou divulgar qualquer material que viole direitos de terceiros, incluindo direitos de propriedade intelectual;</li>
+<li>Obter ou tentar obter acesso não-autorizado a outros sistemas ou redes de computadores conectados ao serviço;</li>
+<li>Interferir ou interromper o serviço, as redes ou os servidores conectados ao serviço;</li>
+<li>Usar de falsa identidade ou utilizar dados de terceiros para obter acesso ao serviço;</li>
+<li>Tentar enganar ou subverter as medidas de segurança dos sistemas e da rede de dados da ACMD; </li>
+<li>Efetuar ou tentar qualquer tipo de acesso não autorizado aos recursos computacionais da ACMD;</li>
+<li>Utilizar serviço de proxy externo ou meios alternativos para burlar sites com acesso não autorizado;</li>
+<li>Utilizar programas de downloads do tipo P2P (peer-to-peer);</li>
+<li>Ligar aparelhos (APs) a fim de redistribuir o acesso à rede sem fio a terceiros;</li>
+<li>Provocar interferência em serviços de outros usuários ou o seu bloqueio, ocasionando congestionamento da rede de dados, 
+inserindo vírus ou tentando a apropriação indevida dos recursos computacionais da rede da ACMD;</li>
+<li>Utilizar os recursos da rede sem fio da ACMD para ganho indevido;</li>
+<li>Se fazer passar por outra pessoa ou dissimular sua identidade quando utilizar os recursos da rede sem fio;</li>
+</ul>
+<p></p>
+</div>
+
+</p>
+                             
+                        </div>
+                        <div class="row row-split">
+                            <div class="row declaration_right_terms_button_1">
+                                <div class="col-xs-12 cl-md-12 col-lg-12 declaration_right_terms_button_2">
+                                    <button id="back" type="button"
+                                            class="form-control btn btn-info declaration_right_terms_button"
+                                            ng-click="backToLogin();">{{'register.backToLogin'|translate}}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>

@@ -1,0 +1,533 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport"/>
+    <script src="js/angular-bootstrap/jquery.js"></script>
+
+    <script src="js/angular-bootstrap/angular.min.js"></script>
+    <script src="js/angular-bootstrap/angular-local-storage.js"></script>
+    <script src="js/angular-bootstrap/angular-translate.min.js"></script>
+    <script src="js/angular-bootstrap/angular-translate-loader-static-files.min.js"></script>
+    <script src="js/angular-bootstrap/underscore.js"></script>
+    <script src="js/angular-bootstrap/bootstrap.min.js"></script>
+    <script src="js/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="js/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <!--User define-->
+    <script src="js/user-custom/main.js"></script>
+    <script src="js/user-custom/action-service.js"></script>
+    <script src="js/user-custom/main-constant.js"></script>
+    <script src="js/user-custom/register-controller.js"></script>
+    <script src="js/user-custom/service.js"></script>
+    <script src="js/user-custom/login-controller.js"></script>
+    <script src="js/user-custom/portal-param.js"></script>
+    <script src="js/user-custom/style.js"></script>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/portal-layout.css">
+    <link rel="stylesheet" type="text/css" href="css/additional.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/declaration.css">
+    <link rel="stylesheet" href="css/flag-icon.min.css">
+     <link rel="stylesheet" href="css/style.css"> 
+
+</head>
+<body ng-app="main" ng-controller="registerController as vm">
+<div class="container-fluid" id="welcome_layout_id" ng-cloak><!-- wma-map-content portal_layout_container -->
+    <div class="row header-wrapper">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 header-content" ng-style="welcomeLogoBg" hidden="hidden">
+         
+            <div class="flag-wrapper" >
+                <div class="dropdown language-dropdown pull-right">
+                    <a data-toggle="dropdown" class="dropdown-toggle language-icon pointer"><span
+                            ng-class="vm.languageIcon"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="btn btn-block" ng-click="vm.action.switching('us')"><span
+                                class="flag-icon flag-icon-world" style="line-height:1.3em;"></span> English
+                        </li>
+                        <li class="btn btn-block" ng-click="vm.action.switching('cn')"><span
+                                class="flag-icon flag-icon-cn"></span> 中文
+                        </li>
+                        <li class="btn btn-block" ng-click="vm.action.switching('de')"><span
+                                class="flag-icon flag-icon-de"></span> Deutsch
+                        </li>
+                        <li class="btn btn-block" ng-click="vm.action.switching('fi')"><span
+                                class="flag-icon flag-icon-fi"></span> Suomalainen
+                        </li>
+                        <li class="btn btn-block" ng-click="vm.action.switching('fr')"><span
+                                class="flag-icon flag-icon-fr"></span> Français
+                        </li>
+                        <li class="btn btn-block" ng-click="vm.action.switching('nl')"><span
+                                class="flag-icon flag-icon-nl"></span> Nederlands
+                        </li>
+                        <li class="btn btn-block" ng-click="vm.action.switching('no')"><span
+                                class="flag-icon flag-icon-no"></span> Norsk språk
+                        </li>
+                        <li class="btn btn-block" ng-click="vm.action.switching('es')"><span
+                                class="flag-icon flag-icon-es"></span> Español
+                        </li>
+                        <li class="btn btn-block" ng-click="vm.action.switching('kr')"><span
+                                class="flag-icon flag-icon-kr"></span> 한국어
+                        </li>
+                        <li class="btn btn-block" ng-click="vm.action.switching('pl')"><span
+                                class="flag-icon flag-icon-pl"></span> Polski
+                        </li>
+                        <li class="btn btn-block" ng-click="vm.action.switching('br')"><span
+                                class="flag-icon flag-icon-br"></span> Português
+                        </li>
+                        <li class="btn btn-block" ng-click="vm.action.switching('it')"><span
+                                class="flag-icon flag-icon-it"></span> Italiano
+                        </li>
+                        <li class="btn btn-block" ng-click="vm.action.switching('se')"><span
+                                class="flag-icon flag-icon-se"></span> Svenska
+                        </li>
+                        <li class="btn btn-block" ng-click="vm.action.switching('tr')"><span
+                                class="flag-icon flag-icon-tr"></span> Türkçe
+                        </li>
+                        <li class="btn btn-block" ng-click="vm.action.switching('ro')"><span
+                                class="flag-icon flag-icon-ro"></span> România
+                        </li>
+                        <li class="btn btn-block" ng-click="vm.action.switching('lv')"><span  class="flag-icon flag-icon-lv" ></span> Latvietis</li>
+                        <li class="btn btn-block" ng-click="vm.action.switching('lt')"><span  class="flag-icon flag-icon-lt" ></span> Lietuvis</li>
+                        <li class="btn btn-block" ng-click="vm.action.switching('gr')"><span  class="flag-icon flag-icon-gr" ></span> Ελληνικά</li>
+                    </ul>
+                </div>
+            </div>
+        </div>     
+    </div>
+    <div align="center"  class="container" ><img   src="img/def.png" alt="Imagem responsiva" /></div>
+    <div class="row "><!-- col-md-12 no-padding-left-right -->
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div id="welcome_bg" class="welcome_portal_layout_function_bg" style="position: relative;" ng-style="welcomeBgStyle">
+                <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1  welcome-container-body welcome-container-overflow"
+                        id="chohei"
+                        ng-style="welcomeBgColorStyle">
+                    <div class="row" ng-if="!vm.showRegistered">
+                        <form class="text-center" role="form" id="nobu" name="form">
+                            <div id="registHtmlCodeMsg" class="login-title form-group">
+                                {{'register.registerAccountMsg'|translate}}
+                            </div>
+                            <div class="form-group" ng-if="vm.reqiredAttributes.indexOf('User Name') != -1">
+                                <span
+                                    class="input-icon icon-right"
+                                    ng-class="{'has-error':form.username.$error.invalid }">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="Username"
+                                        name="username"
+                                        placeholder="{{'register.username'|translate}}"
+                                        ng-model="vm.username"
+                                        validator="vm.action.rules.guestName">
+                                    <i class="glyphicon glyphicon-user" style="color:#ccc"></i>
+                                </span>
+                                <div ng-show="form.username.$error" style="color: red">
+                                    {{form.username.$error.errMessage|translate}}
+                                </div>
+                            </div>
+                            <div class="form-group" ng-if="vm.reqiredAttributes.indexOf('Email Id') != -1">
+                                <span
+                                    class="input-icon icon-right"
+                                    ng-class="{'has-error':form.email.$error.invalid }">
+                                    <input
+                                        class="form-control"
+                                        id="email"
+                                        name="email"
+                                        placeholder="{{'register.email'|translate}}"
+                                        ng-disabled="vm.verifyCodeStatus"
+                                        ng-model="vm.email"
+                                        validator="vm.action.rules.emailAddress">
+                                        <i class="glyphicon glyphicon-envelope" style="color:#ccc"></i>
+                                </span>
+                                <div ng-show="form.email.$error" style="color: red">
+                                    {{form.email.$error.errMessage|translate}}
+                                </div>
+                            </div>
+                            <div class="form-group" ng-if="vm.reqiredAttributes.indexOf('Phone Number') != -1">
+                                <span
+                                    class="input-icon icon-right"
+                                    ng-class="{'has-error':form.phoneNumber.$error.invalid }">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="telephone"
+                                        name="phoneNumber"
+                                        placeholder="{{'register.telephone'|translate}}"
+                                        ng-model="vm.telephone"
+                                        ng-disabled="vm.verifyCodeStatus"
+                                        validator="vm.action.rules.phoneNumber">
+                                    <i class="glyphicon glyphicon-phone" style="color:#ccc"></i>
+                                </span>
+                                <div ng-show="form.phoneNumber.$error" style="color: red">
+                                    {{form.phoneNumber.$error.errMessage|translate}}
+                                </div>
+                            </div>
+                            <div class="form-group" ng-if="vm.reqiredAttributes.indexOf('Password') != -1">
+                                <span
+                                    class="input-icon icon-right"
+                                    ng-class="{'has-error':form.guestPassword.$error.invalid }">
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        id="Password"
+                                        name="guestPassword"
+                                        placeholder="{{'register.password'|translate}}"
+                                        ng-model="vm.guestpassword"
+                                        ng-change="vm.action.validConfirmPassword(form)"
+                                        validator="vm.action.rules.guestPassword">
+                                    <i class="glyphicon glyphicon-lock" style="color:#ccc"></i>
+                                </span>
+                                <div ng-show="form.guestPassword.$error" style="color: red">
+                                    {{form.guestPassword.$error.errMessage|translate}}
+                                </div>
+                            </div>
+                            <div class="form-group" ng-if="vm.reqiredAttributes.indexOf('Password') != -1">
+                                <span
+                                    class="input-icon icon-right"
+                                    ng-class="{'has-error':form.guestConfirmPassword.$error.invalid }">
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        id="confirmPassword"
+                                        name="guestConfirmPassword"
+                                        placeholder="{{'register.confirmPassword'|translate}}"
+                                        ng-model="vm.guestConfirmPassword"
+                                        validator="vm.action.rules.guestConfirmPassword"/>
+                                    <i class="glyphicon glyphicon-lock" style="color:#ccc"></i>
+                                </span>
+                                <div ng-show="form.guestConfirmPassword.$error" style="color: red">
+                                    {{form.guestConfirmPassword.$error.errMessage|translate}}
+                                </div>
+                            </div>
+                            <div class="form-group" ng-if="vm.reqiredAttributes.indexOf('Full Name') != -1">
+                                <span
+                                    class="input-icon icon-right"
+                                    ng-class="{'has-error':form.fullName.$error.invalid }">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="fullName"
+                                        name="fullName"
+                                        placeholder="{{'register.fullName'|translate}}"
+                                        ng-model="vm.fullname"
+                                        validator="vm.action.rules.fullName">
+                                    <i class="glyphicon glyphicon-user" style="color:#ccc"></i>
+                                </span>
+                                <div ng-show="form.fullName.$error" style="color: red">
+                                    {{form.fullName.$error.errMessage|translate}}
+                                </div>
+                            </div>
+                            <div class="form-group" ng-if="vm.reqiredAttributes.indexOf('Company') != -1">
+                                <span
+                                    class="input-icon icon-right"
+                                    ng-class="{'has-error':form.company.$error.invalid }">
+                                    <input
+                                        type="text"
+                                            class="form-control"
+                                            id="company"
+                                            name="company"
+                                            placeholder="{{'register.company'|translate}}"
+                                            ng-model="vm.company" validator="vm.action.rules.company">
+                                        <i class="glyphicon glyphicon-home" style="color:#ccc"></i>
+                                </span>
+                                <div ng-show="form.company.$error" style="color: red">
+                                    {{form.company.$error.errMessage|translate}}
+                                </div>
+                            </div>
+                            <div class="form-group" ng-if="vm.reqiredAttributes.indexOf('Country or Region') != -1">
+                                <span
+                                    class="input-icon icon-right"
+                                    ng-class="{'has-error':form.countryCode.$error.invalid }">
+                                    <input type="text" class="form-control" id="CountryorRegion"
+                                            name="countryCode"
+                                            placeholder="{{'register.countryOrRegion'|translate}}"
+                                            ng-model="vm.country" validator="vm.action.rules.country">
+                                        <i class="glyphicon glyphicon-screenshot" style="color:#ccc"></i>
+                                </span>
+                                <div ng-show="form.countryCode.$error" style="color: red">
+                                    {{form.countryCode.$error.errMessage|translate}}
+                                </div>
+                            </div>
+
+                            <div class="form-group" ng-if="vm.reqiredAttributes.indexOf('Department') != -1">
+                                <span
+                                    class="input-icon icon-right"
+                                    ng-class="{'has-error':form.department.$error.invalid }">
+                                    <input
+                                        type="text" class="form-control" name="department" id="department"
+                                        validator="vm.action.rules.department"
+                                        placeholder="{{'register.department'|translate}}"
+                                        ng-model="vm.department">
+                                        <i class="glyphicon glyphicon-th-list" style="color:#ccc"></i>
+                                </span>
+                                <div ng-show="form.department.$error" style="color: red">
+                                    {{form.department.$error.errMessage|translate}}
+                                </div>
+                            </div>
+
+                            <div class="form-group" ng-if="vm.reqiredAttributes.indexOf('Employee Visited') != -1">
+                                <span
+                                    class="input-icon icon-right"
+                                    ng-class="{'has-error':form.employeeVisited.$error.invalid }">
+                                    <input
+                                        type="text" class="form-control" name="employeeVisited"
+                                        id="employeeVisited" validator="vm.action.rules.employeeVisited"
+                                        placeholder="{{'register.employeeVisited'|translate}}"
+                                        ng-model="vm.employeeVisited">
+                                        <i class="glyphicon glyphicon-list-alt" style="color:#ccc"></i>
+                                </span>
+                                <div ng-show="form.employeeVisited.$error" style="color: red">
+                                    {{form.employeeVisited.$error.errMessage|translate}}
+                                </div>
+                            </div>
+
+                            <div class="form-group"
+                                    ng-if="vm.reqiredAttributes.indexOf('Employee Email ID') != -1 && vm.emailRestriction =='Full Email'">
+                                <div class="row no-margin-left-right">
+                                    <div class="col-lg-12 no-padding-left-right">
+                                        <select class="form-control no-padding-left-right"
+                                                ng-options="l for l in vm.allowedEmailSuffix"
+                                                ng-model="vm.employeeEmailID"
+                                                ng-init="vm.employeeEmailID = vm.allowedEmailSuffix[0]">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div ng-show="form.employeeEmail.$error" style="color: red">
+                                    {{form.employeeEmail.$error.errMessage|translate}}
+                                </div>
+                            </div>
+                            <div class="form-group"
+                                    ng-if="vm.reqiredAttributes.indexOf('Employee Email ID') != -1&& vm.emailRestriction =='Suffix'">
+                                <div class="row no-margin-left-right">
+                                    <div class="col-lg-8 no-padding-left-right">
+                                        <div class="input-icon icon-right "
+                                                ng-class="{'has-error':form.employeeEmail.$error.invalid }">
+                                            <input type="text" class="form-control" id="employeeEmailID"
+                                                    name="employeeEmail" validator="vm.action.rules.employeeEmail"
+                                                    placeholder="{{'register.visitEmployeeEmail'| translate}}"
+                                                    ng-model="vm.employeeEmailID"/>
+                                            <i class="glyphicon glyphicon-envelope" style="color:#ccc"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 no-padding-left-right">
+                                        <select class="form-control no-padding-left-right"
+                                                ng-options="l for l in vm.allowedEmailSuffix"
+                                                ng-model="vm.selectEmployEmail"
+                                                ng-init="vm.selectEmployEmail = vm.allowedEmailSuffix[0]">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div ng-show="form.employeeEmail.$error" style="color: red">
+                                    {{form.employeeEmail.$error.errMessage|translate}}
+                                </div>
+                            </div>
+                            <div class="form-group" ng-if="vm.locationEnable">
+                                <select class="form-control no-padding-left-right"
+                                        ng-options="l for l in vm.locationList" ng-model="vm.location"
+                                        ng-init="vm.location = vm.locationList[0]">
+                                </select>
+                                <div ng-show="form.employeeEmail.$error" style="color: red">
+                                    {{form.employeeEmail.$error.errMessage|translate}}
+                                </div>
+                            </div>
+
+                            <div class="form-group" ng-if="vm.reqiredAttributes.indexOf('Position') != -1">
+                                    <span class="input-icon icon-right"
+                                            ng-class="{'has-error':form.position.$error.invalid }">
+                                        <input type="text" class="form-control" name="position" id="position"
+                                                validator="vm.action.rules.position"
+                                                placeholder="{{'register.position'| translate}}"
+                                                ng-model="vm.position">
+                                            <i class="glyphicon glyphicon-list-alt" style="color:#ccc"></i>
+                                    </span>
+                                <div ng-show="form.position.$error" style="color: red">
+                                    {{form.position.$error.errMessage|translate}}
+                                </div>
+                            </div>
+
+                            <div class="form-group"
+                                    ng-if="vm.reqiredAttributes.indexOf('Employee Phone Number') != -1">
+                                    <span class="input-icon icon-right"
+                                            ng-class="{'has-error':form.employeePhoneNumber.$error.invalid }">
+                                        <input type="text" class="form-control" id="employeePhoneNumber"
+                                                name="employeePhoneNumber" validator="vm.action.rules.phoneNumber"
+                                                placeholder="{{'register.companyTelPhone'| translate}}"
+                                                ng-model="vm.employeePhoneNumber">
+                                            <i class="glyphicon glyphicon-phone" style="color:#ccc"></i>
+                                    </span>
+                                <div ng-show="form.position.$error" style="color: red">
+                                    {{form.employeePhoneNumber.$error.errMessage|translate}}
+                                </div>
+                            </div>
+                            <div class="form-group" ng-if="vm.reqiredAttributes.indexOf('Reason Visited') != -1">
+                                <span
+                                    class="input-icon icon-right"
+                                    ng-class="{'has-error':form.visitReason.$error.invalid }">
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="reasonVisited"
+                                        name="visitReason"
+                                        validator="vm.action.rules.purposeOfTheVisited"
+                                        placeholder="{{'register.visitReason'| translate}}"
+                                        ng-model="vm.reasonVisited">
+                                    <i class="glyphicon glyphicon-list-alt" style="color:#ccc"></i>
+                                </span>
+                                <div ng-show="form.visitReason.$error" style="color: red">
+                                    {{form.visitReason.$error.errMessage|translate}}
+                                </div>
+                            </div>
+                            <div
+                                class="row form-group"
+                                ng-if="(vm.reqiredAttributes.indexOf('Phone Number') != -1 ||vm.reqiredAttributes.indexOf('Email Id') != -1)&& vm.authorizeVerificationCode">
+                                <div class="col-md-8 col-lg-8 col-sm-7 col-xs-6 no-padding-right">
+                                    <input type="text" style="padding-left: 6px;" class="form-control"
+                                            id="verifyCode" name="verifyCode" validator="vm.action.rules.verifyCode"
+                                            placeholder="{{'register.verifyCode'| translate}}"
+                                            ng-model="vm.verifyCode">
+                                </div>
+                                <div class="col-md-4 col-lg-4 col-sm-5 col-xs-6">
+                                    <a class="btn btn-success btn-block" ng-click="vm.action.getVerifyCode()"
+                                        ng-disabled="form.email.$invalid || form.email.$pristine || form.phoneNumber.$invalid || form.phoneNumber.$pristine"
+                                        ng-if="!vm.action.codeTimeout">{{'register.getVerifyCode'| translate}}</a>
+                                    <a class="btn btn-success btn-block" ng-disabled="vm.action.codeTimeout"
+                                        ng-if="vm.action.codeTimeout">{{'register.waitGetVerifyCode'|
+                                        translate}}{{vm.action.codeTimeout}} </a>
+                                </div>
+
+                                <div ng-show="form.verifyCode.$error" style="color: red">
+                                    {{form.verifyCode.$error.errMessage|translate}}
+                                </div>
+                            </div>
+
+                            <div class="form-group" ng-repeat="attr in selfRegisterCustomAttrList track by $index">
+                                <span class="input-con icon-right" ng-class="{'has-error': form[attr.attrName].$error.invalid}">
+                                        <input type="text"
+                                            class="form-control"
+                                            placeholder="{{attr.name}}"
+                                            ng-model="attr.value"
+                                            name="{{attr.attrName}}"
+                                            validator="vm.action.rules.customAttr"
+                                            ng-change="$parent.updateAttrList($index, attr)">
+                                </span>
+                                <div ng-show="form[attr.attrName].$error" style="color:red;">
+                                    {{form[attr.attrName].$error.errMessage|translate}}
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="form-group">
+                                <a class="btn btn-success btn-block"
+                                    id="registHtmlCodeBtn"
+                                    ng-disabled="form.$invalid || vm.action.validateForm(form) || vm.disRegistration"
+                                    ng-click="vm.action.register()">
+                                    <i ng-if="vm.disRegistration"
+                                        class='fa fa-spinner fa-spin'>
+                                    </i>
+                                    {{'register.registerAccountBtn'| translate}}
+                                </a>
+                            </div>
+                            <div class="form-group">
+                                {{"register.haveAccount"|translate}}<a ng-click="vm.action.backToLogin()">{{'register.signIn'| translate}}</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row  form-group" ng-if="vm.showRegistered">
+                        <div class="login-title">{{vm.markedWord | translate}}</div>
+                    </div>
+                    <div ng-if="vm.showRegistered" class="row registerResult">
+                        <div class="form-group" ng-if="vm.username">
+                            <label class="control-label btn-block">{{'register.username'|translate}}</label>
+                            <span class="form-control-static"> <i class="glyphicon glyphicon-user"
+                                                                    style="color:#ccc"></i>{{vm.username}}</span>
+                        </div>
+                        <div class="form-group" ng-if="vm.password">
+                            <label class="control-label btn-block">{{'register.password'|translate}}</label>
+                            <span class="form-control-static"> <i class="glyphicon glyphicon-lock"
+                                                                    style="color:#ccc"></i>{{vm.password}}</span>
+                        </div>
+                        <div class="form-group" ng-if="vm.dateOfEffective">
+                            <label class="control-label btn-block">{{'register.dateOfEffective'|translate}}</label>
+                            <span class="form-control-static"> <i class="glyphicon glyphicon-time"
+                                                                    style="color:#ccc"></i>{{vm.dateOfEffective}}</span>
+                        </div>
+                        <div class="form-group" ng-if="vm.expireTime">
+                            <label class="control-label btn-block">{{'register.expireTime'|translate}}</label>
+                            <span class="form-control-static"> <i class="glyphicon glyphicon-time"
+                                                                    style="color:#ccc"></i>{{vm.expireTime}}</span>
+                        </div>
+                        <div class="form-group" ng-if="vm.email">
+                            <label class="control-label btn-block">{{'register.email'|translate}}</label>
+                            <span class="form-control-static"> <i class="glyphicon glyphicon-envelope"
+                                                                    style="color:#ccc"></i>{{vm.email}}</span>
+                        </div>
+                        <div class="form-group" ng-if="vm.telephone">
+                            <label class="control-label btn-block">{{'register.telephone'|translate}}</label>
+                            <span class="form-control-static"> <i class="glyphicon glyphicon-phone"
+                                                                    style="color:#ccc"></i>{{vm.telephone}}</span>
+                        </div>
+                        <div class="form-group" ng-if="vm.fullname">
+                            <label class="control-label btn-block">{{'register.fullName'|translate}}</label>
+                            <span class="form-control-static"> <i class="glyphicon glyphicon-user"
+                                                                    style="color:#ccc"></i>{{vm.fullname}}</span>
+                        </div>
+                        <div class="form-group" ng-if="vm.company">
+                            <label class="control-label btn-block">{{'register.company'|translate}}</label>
+                            <span class="form-control-static"> <i class="glyphicon glyphicon-home"
+                                                                    style="color:#ccc"></i>{{vm.company}}</span>
+                        </div>
+                        <div class="form-group" ng-if="vm.countryOrRegion">
+                            <label class="control-label btn-block">{{'register.countryOrRegion'|translate}}</label>
+                            <span class="form-control-static"> <i class="glyphicon glyphicon-screenshot"
+                                                                    style="color:#ccc"></i>{{vm.countryOrRegion}}</span>
+                        </div>
+                        <div class="form-group" ng-if="vm.department">
+                            <label class="control-label btn-block">{{'register.department'|translate}}</label>
+                            <span class="form-control-static"> <i class="glyphicon glyphicon-th-list"
+                                                                    style="color:#ccc"></i>{{vm.department}}</span>
+                        </div>
+                        <div class="form-group" ng-if="vm.employeeVisited">
+                            <label class="control-label btn-block">{{'register.employeeVisited'|translate}}</label>
+                            <span class="form-control-static"> <i class="glyphicon glyphicon-list-alt"
+                                                                    style="color:#ccc"></i>{{vm.employeeVisited}}</span>
+                        </div>
+                        <div class="form-group" ng-if="vm.employeeEmailID">
+                            <label class="control-label btn-block">{{'register.visitEmployeeEmail'|translate}}</label>
+                            <span class="form-control-static"> <i class="glyphicon glyphicon-envelope"
+                                                                    style="color:#ccc"></i>{{vm.employeeEmailID}}</span>
+                        </div>
+                        <div class="form-group" ng-if="vm.position">
+                            <label class="control-label btn-block">{{'register.position'|translate}}</label>
+                            <span class="form-control-static"> <i class="glyphicon glyphicon-list-alt"
+                                                                    style="color:#ccc"></i>{{vm.position}}</span>
+                        </div>
+                        <div class="form-group" ng-if="vm.employeePhoneNumber">
+                            <label class="control-label btn-block">{{'register.companyTelPhone'|translate}}</label>
+                            <span class="form-control-static"> <i class="glyphicon glyphicon-phone"
+                                                                    style="color:#ccc"></i>{{vm.employeePhoneNumber}}</span>
+                        </div>
+                        <div class="form-group" ng-if="vm.reasonVisited">
+                            <label class="control-label btn-block">{{'register.visitReason'|translate}}</label>
+                            <span class="form-control-static"> <i class="glyphicon glyphicon-list-alt"
+                                                                    style="color:#ccc"></i>{{vm.reasonVisited}}</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label btn-block">{{'register.accountStatus'|translate}}</label>
+                            <span class="form-control-static"> <i class="glyphicon glyphicon-list-alt"
+                                                                    style="color:#ccc"></i>{{vm.accountStatus}}</span>
+                        </div>
+                        <div class="form-group">
+                            <a class="btn btn-success btn-block" ng-disabled="!vm.enableBackLogin"
+                                ng-click="vm.action.backToLogin()">{{'register.backToLogin'| translate}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

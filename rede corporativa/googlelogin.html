@@ -1,0 +1,65 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+	<script src="js/angular-bootstrap/jquery.js"></script>
+
+	<script src="js/angular-bootstrap/angular.min.js"></script>
+	<script src="js/angular-bootstrap/angular-local-storage.js"></script>
+	<script src="js/angular-bootstrap/angular-translate.min.js"></script>
+	<script src="js/angular-bootstrap/angular-translate-loader-static-files.min.js"></script>
+	<script src="js/angular-bootstrap/underscore.js"></script>
+	<script src="js/angular-bootstrap/bootstrap.min.js"></script>
+	<script src="js/angular-bootstrap/ui-bootstrap.min.js"></script>
+	<script src="js/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+	<script src="js/user-custom/main.js"></script>
+	<script src="js/user-custom/action-service.js"></script>
+	<script src="js/angular-bootstrap/angularjs-social-login.js"></script>
+	<script src="js/user-custom/main-constant.js"></script>
+	<script src="js/user-custom/service.js"></script>
+	<script src="js/user-custom/google-login-controller.js"></script>
+	<script src="js/user-custom/portal-param.js"></script>
+	<script src="js/user-custom/style.js"></script>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/portal-layout.css">
+	<link rel="stylesheet" type="text/css" href="css/additional.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="css/declaration.css">
+	<link rel="stylesheet" href="css/flag-icon.min.css">
+</head>
+<body ng-app="main" ng-controller="googleLoginController as vm">
+    <div class="row" ng-style="logoBg">
+        <div class="col-md-12 social-header-wrapper">
+            <img id="welcome_logo" ng-src="{{vm.welcome_logo}}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="portal_layout_function">
+            <div
+                id="welcome_bg"
+                ng-style="welcomeBgStyle"
+                class="facebook_google_function_bg">
+                <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-6  col-sm-offset-3 col-xs-10 col-xs-offset-1  welcome-container-body"
+                    id="chohei"
+                    ng-style="welcomeBgColorStyle">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form class="text-center" role="form" id="nobu">
+                                <div class="form-group">
+                                    {{"login.message.loadingMsg" | translate}}
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

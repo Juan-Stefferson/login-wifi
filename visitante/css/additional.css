@@ -1,0 +1,81 @@
+@media(max-height: 670px) {
+    #welcome_logo{
+        max-width: 200px;
+    }
+    #success_logo{
+        max-width: 200px;
+    }
+}
+
+@media (min-height: 671px) and (max-height: 1024px) {
+    #welcome_logo{
+        max-height: 100px;
+    }
+    #success_logo{
+        max-height: 100px;
+    }
+    @media (max-width: 630px){
+        #welcome_logo{
+            max-height: 60px;
+        }
+        #success_logo{
+            max-height: 60px;
+        }
+    }
+    @media (max-width: 400px){
+        #welcome_logo{
+            max-height: 45px;
+        }
+        #success_logo{
+            max-height: 45px;
+        }
+    }
+}
+@media(min-height: 1025px) {
+    #welcome_logo{
+        max-height: 300px
+    }
+    #success_logo{
+        max-height: 300px
+    }
+    @media (max-width: 1200px){
+        #welcome_logo{
+            max-height: 100px
+        }
+        #success_logo{
+            max-height: 100px
+        }
+    }
+}
+
+@media (max-height: 736px) {#chohei{min-height: 80%}}
+@media (max-width: 992px) {#atSpace{text-align:center}}
+@media (min-width: 992px) {#atSpace{text-align: left}}
+@media (min-width: 992px) {#videoAdd{margin: 0; padding: 0}}
+video {
+    object-fit:fill
+}
+
+/* @media (max-height: 736px) {#logone{font-size:0.5em}}
+@media (max-height: 736px) {#logtwo{font-size:0.5em}} */
+.no-padding-left-right{
+    padding-left: 0px;
+    padding-right:0px;
+}
+
+.no-padding-left{
+    padding-left: 0px;
+}
+
+.no-padding-right {
+    padding-right: 0px;
+}
+
+.no-margin-left-right{
+    margin-left: 0px;
+    margin-right:0px;
+}
+
+.registerResult i {
+    margin-right: 5px;
+}

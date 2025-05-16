@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="panel panel-success" style="margin-bottom:0px;" ng-if="!vm.error">
+    <div class="panel-body" style="color: #3c763d; background-color: #dff0d8">
+        {{vm.response | translate}}
+    </div>
+    <div class="panel-footer" style="text-align: right;">
+        <a class="btn btn-success btn" ng-click="vm.action.closeDialog()">{{'upam.confirmMsg.okBtn' | translate}}</a>
+    </div>
+</div>
+
+<div class="panel panel-danger" style="margin-bottom:0px;" ng-if="vm.error">
+    <div class="panel-body" style="color: #a94442; background-color: #f2dede">
+        {{vm.response | translate}}
+    </div>
+    <div class="panel-footer" style="text-align: right;">
+        <a class="btn btn-danger btn" ng-click="vm.action.closeDialog()">{{'upam.confirmMsg.okBtn' | translate}}</a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+.han-validator-error{
+    color: red;
+    font-style: italic;
+    font-weight: 700px;
+    font-size: .9em;
+    width: 100%;
+    display: block;
+}
+
+.han-text-ellipsis{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#verifyViaText{
+    text-align: left;
+}

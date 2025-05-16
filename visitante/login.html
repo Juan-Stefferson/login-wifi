@@ -1,0 +1,149 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <script src="js/angular-bootstrap/jquery.js"></script>
+    <script src="js/angular-bootstrap/angular.min.js"></script>
+    <script src="js/angular-bootstrap/angular-local-storage.js"></script>
+    <script src="js/angular-bootstrap/angular-translate.min.js"></script>
+    <script src="js/angular-bootstrap/angular-translate-loader-static-files.min.js"></script>
+    <script src="js/angular-bootstrap/underscore.js"></script>
+    <script src="js/angular-bootstrap/bootstrap.min.js"></script>
+    <script src="js/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="js/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="js/user-custom/main.js"></script>
+    <script src="js/user-custom/action-service.js"></script>
+    <script src="js/angular-bootstrap/angularjs-social-login.js"></script>
+    <script src="js/user-custom/main-constant.js"></script>
+    <script src="js/user-custom/service.js"></script>
+    <script src="js/user-custom/login-controller.js"></script>
+    <script src="js/user-custom/portal-param.js"></script>
+    <script src="js/user-custom/style.js"></script>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/portal-layout.css">
+    <link rel="stylesheet" type="text/css" href="css/additional.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/declaration.css">
+    <link rel="stylesheet" href="css/flag-icon.min.css">
+    
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<style>
+     body {
+            margin: 0;
+            background-color: #9c9c9cd3;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .logo {
+            margin-bottom: 20px;
+            text-align: center; /* CENTRALIZA A LOGO */
+        }
+        .logo img {
+            max-width: 100px;
+        }
+        .container h2 {
+            margin-bottom: 20px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .form-check {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 10px;
+        }
+        .form-check input {
+            margin-right: 8px;
+        }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            margin-top: 10px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn-success {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .btn-google {
+            background-color: #dd4b39;
+            color: white;
+        }
+        .btn-facebook {
+            background-color: #3b5998;
+            color: white;
+        }
+        .divider {
+            margin: 15px 0;
+            font-size: 14px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #666;
+        }
+        .terms {
+            font-size: 13px;
+            margin: 10px 0;
+            text-align: left;
+        }
+        .terms a {
+            font-size: 13px;
+        }
+        .language {
+            font-size: 12px;
+            margin-top: 10px;
+            color: #777;
+        }
+</style>
+
+<body>
+    <div class="logo">
+        <img src="img/def.png" alt="Ministério da Defesa">
+    </div>
+    <div class="container">
+        <p>Ao continuar, você está concordando com os termos de uso.</p>
+        <h2>Login</h2>
+        <input type="text" class="form-control" placeholder="Usuário">
+        <input type="password" class="form-control" placeholder="Senha">
+        <div class="terms">
+            <label><input type="checkbox" checked> Aceito os <a href="#">Termos de Uso</a></label>
+        </div>
+        <button class="btn btn-success">Entrar</button>
+        <div class="form-check">
+            <input type="checkbox" id="lembrar">
+            <label for="lembrar">Lembrar-me</label>
+        </div>
+        <div class="language">Idioma: Português (Brasil)</div>
+    </div>
+    <footer>
+        &copy; 2025 Ministério da Defesa. Todos os direitos reservados.
+    </footer>
+</body>
+</html>

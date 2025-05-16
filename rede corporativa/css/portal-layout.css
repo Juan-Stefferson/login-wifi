@@ -1,0 +1,70 @@
+/**
+ * Created by chenqk on 2018/5/30.
+ */
+/* .portal_layout_container {
+    width: 100%;
+
+    padding: 1%
+} */
+
+.portal_layout_logo {
+    background: url('../img/logo-default.jpg') no-repeat;
+    background-size: 100% 100%;
+    height: 20%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.portal_layout_function {
+    margin: 1rem auto;
+}
+
+.header-wrapper{
+    padding: 15px 15px 5px 15px;
+}
+.header-content{
+    padding: 15px 0px;
+}
+
+.social-header-wrapper{
+    margin-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.flag-wrapper{
+    position: absolute; 
+    margin-top:-15px; 
+    right: 15px; 
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.welcome_portal_layout_function_bg {
+    /* background: url('../img/bg-default.jpg') no-repeat; */
+    background-size: 100% 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.success_portal_layout_function_bg {
+    /* background: url('../img/bg-default.jpg') no-repeat; */
+    background-size: 100% 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.facebook_google_function_bg {
+    /* background: url('../img/bg-default.jpg') no-repeat; */
+    background-size: 100% 100%;
+    height: 100%;
+}
+
+.portal_layout_function_msg {
+    padding-top: 2%;
+    color: #FFFFFF;
+    word-wrap: break-word
+}
+
+.flag-icon-world{
+    background-image: url('../img/world.png')
+}

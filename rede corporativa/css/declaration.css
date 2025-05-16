@@ -1,0 +1,43 @@
+/**
+* auth by chenqk 2018-5-31
+*/
+.declaration_left {
+    display: inline-block;
+}
+
+.declaration_right {
+    text-align: center;
+}
+
+.declaration_right_padding {
+    padding: 15px 15%;
+}
+
+.declaration_right_terms_parent {
+    padding-left: 0px;
+    text-align: left;
+
+}
+
+.declaration_right_terms {
+    text-align: center;
+    color: #5fa8cb;
+    font-weight: bold;
+}
+
+.declaration_right_terms_content {
+    height: 450px;
+    text-indent: 2em;
+    overflow: auto;
+}
+
+.declaration_right_terms_button_1 {
+    padding: 15px 15%
+}
+
+.declaration_right_terms_button_2 {
+    padding-top: 10px;
+}
+.declaration_right_terms_button {
+    float: left;
+}

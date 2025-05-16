@@ -1,0 +1,241 @@
+* {
+    font-family: Georgia, serif;
+}
+
+span.input-icon {
+    display: inline-block;
+}
+
+.input-icon {
+    position: relative;
+    width: 100%;
+}
+.input-icon.icon-right>input.input-xl {
+    padding-right: 54px;
+}
+.input-icon.icon-right>input {
+    padding-left: 6px;
+    padding-right: 36px;
+}
+.input-icon>input.input-xl {
+    padding-left: 54px;
+}
+.input-icon>input {
+    padding-left: 36px;
+    padding-right: 6px;
+}
+
+.input-xl {
+    height: 52px;
+    padding: 12px 18px;
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.input-icon>input.input-xl+[class*="fa-"], .input-icon>input.input-xl+[class*="glyphicon-"] {
+    width: 52px;
+    font-size: 20px;
+    padding-top: 8px;
+    line-height: 34px;
+}
+.input-icon.icon-right>[class*="fa-"], .input-icon.icon-right>[class*="glyphicon-"] {
+    left: auto;
+    right: 0;
+}
+.input-icon>[class*="fa-"], .input-icon>[class*="glyphicon-"] {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 34px;
+    height: 100%;
+    line-height: 28px;
+    display: inline-block;
+    color: #555;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 3px;
+    zoom: 1;
+    filter: alpha(opacity=70);
+    -webkit-opacity: .7;
+    -moz-opacity: .7;
+    opacity: .7;
+}
+.maroon {
+    color: #981b48!important;
+}
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.welcome-container-body {
+    box-shadow: 1px 0 10px 1px rgba(152, 6, 148, 0.3);
+    border-radius: 3px;
+    background-clip: padding-box;
+    padding: 30px 40px 40px 40px;
+    margin-top: 3rem;
+    border: 0.6rem #686868 solid;
+}
+
+.welcome-container-overflow{
+    /*height: 95%;
+    overflow-y: scroll;*/
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+}
+.success-container-body {
+    box-shadow: 1px 0 10px 1px rgba(152, 6, 148, 0.3);
+    border-radius: 3px;
+    background-clip: padding-box;
+    padding: 30px 40px 40px 40px;
+    margin-top: 3rem;
+    border: 0.6rem #686868 solid;
+}
+
+.form-title {
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(0,0,0,.2);
+    font-size: 15px;
+    font-weight: 300;
+    color: #262626;
+    margin-bottom: 15px;
+}
+.login-title{
+    font-family: Georgia, serif;
+    float: left;
+    font-size: 24px;
+    text-align: left;
+}
+.language-dropdown{
+    position: relative;
+}
+.dropdown-menu>.btn-block{
+    text-align: left;
+}
+.language-icon{
+    cursor: pointer;
+}
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+    .login-title{font-size: 20px;}
+    .container-body{margin-top:4rem}
+    .language-icon{font-size:36px}
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .login-title{font-size: 20px;}
+    .container-body{margin-top: 5rem}
+    .language-icon{font-size:30px}
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+    .login-title{font-size: 18px;}
+    .container-body{margin-top: 4rem}
+    .language-icon{font-size:24px}
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .login-title{font-size: 18px;}
+    .container-body{margin-top: 3rem}
+    .language-icon{font-size:18px}
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+    .login-title{font-size: 18px;}
+    .container-body{margin-top: 2rem}
+    .language-icon{font-size:12px}
+}
+
+
+.btn-social{position:relative;padding-left:44px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn-google{color:#fff;background-color:#dd4b39;border-color:rgba(0,0,0,0.2)}
+.btn-facebook{color:#fff;background-color:#3b5998;border-color:rgba(0,0,0,0.2)}
+.btn-rainbow{color:#fff;background-color:#1b85e0;border-color:rgba(0,0,0,0.2)}
+.btn-social>:first-child {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 32px;
+    line-height: 34px;
+    font-size: 1.6em;
+    text-align: center;
+    border-right: 1px solid rgba(0,0,0,0.2);
+}
+
+.fa-rainbow:before,
+.fa-rainbow:before {
+    content:url("../img/logo__rainbow.svg");
+}
+
+.btn-rainbow:focus,
+.btn-rainbow.focus {
+    color: #fff;
+    background-color: #2f94eb;
+    border-color: #204d74;
+}
+.btn-rainbow:hover {
+    color: #fff;
+    background-color: #2f94eb;
+    border-color: #204d74;
+}
+.btn-rainbow:active,
+.btn-rainbow.active,
+.open > .dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #2f94eb;
+    border-color: #204d74;
+}
+
+.loginbox-or {
+    position: relative;
+    text-align: center;
+    height: 20px;
+}
+
+.loginbox-or .or-line {
+    position: absolute;
+    height: 1px;
+    top: 10px;
+    left: 40px;
+    right: 40px;
+    background-color: #ccc;
+}
+
+.loginbox-or .or {
+    position: absolute;
+    top: 0;
+    -lh-property: 0;
+    left: -webkit-calc(50% - 25px);
+    left: -moz-calc(50% - 25px);
+    left: calc(50% - 25px);
+    width: 50px;
+    height: 20px;
+    background-color:#e9e7f7;
+    color: #999;
+    margin: 0 auto;
+}
+
+#han-portal-reset-password {
+    margin-bottom: 0px;
+}
